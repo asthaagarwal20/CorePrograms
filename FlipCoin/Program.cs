@@ -8,16 +8,31 @@ namespace FlipCoin
 {
     internal class Program
     {
+       public static int prime(int n)
+        {
+            int count = 0;
+            for(int i=2;i*i<=n;i++)
+            {
+                if (n % i == 0)
+                    count++;
+            }
+            if (count > 0)
+                return 0;
+            else
+                return 1;
+        }
         static void Main(string[] args)
         {
-            int dividend, divisor, quotient, remainder;
-            Console.WriteLine("Enter Dividend and divisor");
-            dividend = Convert.ToInt32(Console.ReadLine());
-            divisor = Convert.ToInt32(Console.ReadLine());
-            quotient = dividend / divisor;
-            remainder=dividend % divisor;
-            Console.WriteLine("Quotient is " + quotient);
-            Console.WriteLine("Remainder is " + remainder);
+            Console.WriteLine("Enter a No");
+            int n=Convert.ToInt32(Console.ReadLine());
+            for(int i=2;i<n;i++)
+            {
+                if(n%i==0)
+                {
+                    if (prime(i) == 1)
+                        Console.Write(i+" ");
+                }
+            }
         }
     }
 }
