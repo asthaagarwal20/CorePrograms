@@ -8,31 +8,16 @@ namespace FlipCoin
 {
     internal class Program
     {
-       public static int prime(int n)
-        {
-            int count = 0;
-            for(int i=2;i*i<=n;i++)
-            {
-                if (n % i == 0)
-                    count++;
-            }
-            if (count > 0)
-                return 0;
-            else
-                return 1;
-        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a No");
-            int n=Convert.ToInt32(Console.ReadLine());
-            for(int i=2;i<n;i++)
+            Console.WriteLine("Enter the Harmonic you want to find");
+            int number = Convert.ToInt32(Console.ReadLine());
+            double result = 0;
+            for (double i = 1; i <= number; i++)
             {
-                if(n%i==0)
-                {
-                    if (prime(i) == 1)
-                        Console.Write(i+" ");
-                }
+                result += 1 / i;
             }
+            Console.WriteLine("The Value of Harmonic " + number + " is " + result);
         }
     }
 }
